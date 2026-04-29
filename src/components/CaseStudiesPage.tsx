@@ -46,10 +46,10 @@ const CaseStudiesPage: React.FC = () => {
                                 <span className="text-slate-400 font-bold text-sm">Case Study #01</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-                                ICC Cables: Achieving 99.9% BOM Accuracy & Eradicating Production Bottlenecks
+                                Indian Card Clothing: Achieving 99.9% BOM Accuracy & Eradicating Production Bottlenecks
                             </h2>
                             <p className="text-xl text-slate-600 font-medium leading-relaxed">
-                                How a leading cable manufacturer scaled their production capacity by 45% simply by digitizing their supply chain and work order routing through ERPNext.
+                                How a leading industrial manufacturer scaled their production capacity by 45% simply by digitizing their supply chain and work order routing through ERPNext.
                             </p>
                         </div>
 
@@ -78,7 +78,7 @@ const CaseStudiesPage: React.FC = () => {
                                     The Crisis
                                 </h3>
                                 <p className="text-slate-600 leading-relaxed font-medium mb-4">
-                                    Before Srshti, ICC relied on a fragmented mix of Excel sheets and legacy Tally systems. Procurement managers had zero visibility into real-time shop-floor consumption. 
+                                    Before Srshti, Indian Card Clothing relied on a fragmented mix of Excel sheets and legacy systems. Procurement managers had zero visibility into real-time shop-floor consumption. 
                                 </p>
                                 <p className="text-slate-600 leading-relaxed font-medium">
                                     This resulted in massive raw material stockpiling (tying up working capital) while simultaneously causing frequent stock-outs of critical micro-components, halting entire production lines for days.
@@ -171,6 +171,55 @@ const CaseStudiesPage: React.FC = () => {
                                     <li className="flex items-center gap-2 text-slate-700 font-bold"><CheckCircleIcon className="w-5 h-5 text-rose-500" /> Automated Security Deposit Ledgers</li>
                                     <li className="flex items-center gap-2 text-slate-700 font-bold"><CheckCircleIcon className="w-5 h-5 text-rose-500" /> Damage & Repair Costing Engine</li>
                                 </ul>
+                            </div>
+                        </div>
+                    </motion.article>
+
+                    <motion.article 
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl shadow-amber-900/5 border border-slate-200"
+                    >
+                        <div className="mb-12 border-b border-slate-100 pb-8">
+                            <div className="flex items-center gap-3 mb-4">
+                                <span className="px-3 py-1 bg-amber-100 text-amber-700 font-bold text-xs uppercase tracking-widest rounded">Manufacturing & App Dev</span>
+                                <span className="text-slate-400 font-bold text-sm">Case Study #04</span>
+                            </div>
+                            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                                Real Fibre Doors: Seamless Flow from Agent Requirement to Shop Floor
+                            </h2>
+                            <p className="text-xl text-slate-600 font-medium leading-relaxed">
+                                Bridging the gap between field agents and manufacturing through a custom requirement collection app integrated directly with ERPNext.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                            <div>
+                                <h3 className="text-2xl font-bold text-slate-900 mb-4">The Innovation</h3>
+                                <p className="text-slate-600 leading-relaxed font-medium mb-4">
+                                    Real Fibre Doors faced a major communication gap. Field agents were collecting complex door requirements (sizes, materials, designs) via WhatsApp, which then had to be manually entered into the ERP, leading to errors and delays.
+                                </p>
+                                <p className="text-slate-600 leading-relaxed font-medium">
+                                    We developed a custom **Door Agent Requirement Collection App** that allows agents to input specs directly on-site. This data syncs instantly as a Sales Order in ERPNext, triggering the production BOM without a single human touchpoint in between.
+                                </p>
+                            </div>
+                            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 flex flex-col justify-center">
+                                <h4 className="text-center text-sm font-black text-slate-400 uppercase tracking-widest mb-6">Impact Metrics</h4>
+                                <div className="space-y-4">
+                                    <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                        <span className="font-bold text-slate-700">Order Entry Speed</span>
+                                        <span className="text-xl font-black text-amber-600">10x Faster</span>
+                                    </div>
+                                    <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                        <span className="font-bold text-slate-700">Spec Errors</span>
+                                        <span className="text-xl font-black text-amber-600">Reduced to 0%</span>
+                                    </div>
+                                    <div className="flex justify-between items-center bg-white p-4 rounded-xl shadow-sm border border-slate-100">
+                                        <span className="font-bold text-slate-700">Flow Efficiency</span>
+                                        <span className="text-xl font-black text-amber-600">Seamless</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </motion.article>

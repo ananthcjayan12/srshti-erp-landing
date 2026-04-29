@@ -3,6 +3,7 @@ import Hero from './Hero';
 import OperationalChaos from './WhatsAppFeature';
 import Features from './Features';
 import ROICalculator from './ROICalculator';
+import CaseStudiesCTA from './CaseStudiesCTA';
 import Pricing from './Pricing';
 import ProcessTimeline from './Testimonials';
 import Contact from './Contact';
@@ -16,6 +17,7 @@ function Landing() {
             <OperationalChaos />
             <Features />
             <ROICalculator />
+            <CaseStudiesCTA />
             <ProcessTimeline />
             <Pricing />
             <Contact />

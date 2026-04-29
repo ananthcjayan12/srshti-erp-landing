@@ -116,17 +116,108 @@ const Hero: React.FC = () => {
                         </div>
                     </div>
 
-                    <div className="transform transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] rounded-2xl border border-slate-200/50 bg-white overflow-hidden z-10">
-                        <img
-                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-                            alt="ERPNext Dashboard"
-                            className="w-full h-auto object-cover"
-                            width={1200}
-                            height={675}
-                            loading="eager"
-                            decoding="async"
-                            fetchPriority="high"
-                        />
+                    <div className="relative transform transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01] z-10">
+                        {/* Abstract Vector Dashboard UI */}
+                        <div className="w-full aspect-[16/9] bg-slate-50 p-4 md:p-6 flex flex-col gap-4 rounded-2xl border border-slate-200/50 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] overflow-hidden relative">
+                            {/* Dashboard Header */}
+                            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                                        <div className="w-4 h-4 border-[2px] border-white rounded-sm" />
+                                    </div>
+                                    <div className="h-4 w-24 bg-slate-200 rounded-full" />
+                                </div>
+                                <div className="flex gap-2">
+                                    <div className="w-8 h-8 rounded-full bg-slate-200" />
+                                    <div className="w-8 h-8 rounded-full bg-blue-100" />
+                                </div>
+                            </div>
+                            
+                            {/* Dashboard Content */}
+                            <div className="flex-1 flex gap-4">
+                                {/* Sidebar */}
+                                <div className="hidden sm:flex w-1/4 h-full bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex-col gap-3">
+                                    <div className="h-3 w-3/4 bg-slate-200 rounded-full mb-2" />
+                                    <div className="h-8 w-full bg-blue-50 rounded-lg border border-blue-100" />
+                                    <div className="h-8 w-full bg-slate-50 rounded-lg" />
+                                    <div className="h-8 w-full bg-slate-50 rounded-lg" />
+                                    <div className="h-8 w-full bg-slate-50 rounded-lg" />
+                                    <div className="mt-auto h-8 w-full bg-slate-100 rounded-lg" />
+                                </div>
+                                
+                                {/* Main Area */}
+                                <div className="flex-1 flex flex-col gap-4">
+                                    {/* Stats Row */}
+                                    <div className="flex gap-4">
+                                        <div className="flex-1 bg-white rounded-xl shadow-sm border border-slate-100 p-4">
+                                            <div className="h-3 w-1/2 bg-slate-200 rounded-full mb-4" />
+                                            <div className="flex items-end gap-2">
+                                                <div className="h-8 w-2/3 bg-slate-800 rounded-lg" />
+                                                <div className="h-4 w-8 bg-emerald-100 rounded-full" />
+                                            </div>
+                                        </div>
+                                        <div className="flex-1 bg-white rounded-xl shadow-sm border border-slate-100 p-4">
+                                            <div className="h-3 w-1/2 bg-slate-200 rounded-full mb-4" />
+                                            <div className="flex items-end gap-2">
+                                                <div className="h-8 w-1/2 bg-slate-800 rounded-lg" />
+                                                <div className="h-4 w-8 bg-emerald-100 rounded-full" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    {/* Chart Area */}
+                                    <div className="flex-1 bg-white rounded-xl shadow-sm border border-slate-100 p-4 flex flex-col">
+                                        <div className="h-3 w-1/4 bg-slate-200 rounded-full mb-6" />
+                                        <div className="flex-1 flex items-end justify-between gap-2 pt-4 border-b border-slate-100">
+                                            {[40, 70, 45, 90, 65, 100, 80].map((h, i) => (
+                                                <motion.div 
+                                                    key={i}
+                                                    initial={{ height: 0 }}
+                                                    animate={{ height: `${h}%` }}
+                                                    transition={{ duration: 1.5, delay: i * 0.1, ease: "easeOut" }}
+                                                    className="w-full bg-blue-500 rounded-t-sm"
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        {/* Floating Animated Cards */}
+                        <motion.div 
+                            initial={{ x: 20, y: 20, opacity: 0 }}
+                            animate={{ x: 0, y: 0, opacity: 1 }}
+                            transition={{ delay: 0.5, duration: 0.8 }}
+                            className="absolute top-10 -right-6 bg-white/90 backdrop-blur shadow-xl rounded-xl p-4 border border-slate-100 hidden md:block z-20"
+                        >
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                                    <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse" />
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Inventory Sync</p>
+                                    <p className="text-sm font-black text-slate-900">Live: 99.9% Accuracy</p>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ x: -20, y: 40, opacity: 0 }}
+                            animate={{ x: 0, y: 0, opacity: 1 }}
+                            transition={{ delay: 0.7, duration: 0.8 }}
+                            className="absolute bottom-12 -left-8 bg-white/90 backdrop-blur shadow-2xl rounded-xl p-5 border border-slate-100 hidden md:block z-20"
+                        >
+                            <div className="space-y-3">
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Revenue Growth</p>
+                                <div className="flex items-end gap-2">
+                                    <div className="w-2 h-8 bg-blue-200 rounded-sm" />
+                                    <div className="w-2 h-12 bg-blue-300 rounded-sm" />
+                                    <div className="w-2 h-16 bg-blue-400 rounded-sm" />
+                                    <div className="w-2 h-20 bg-blue-600 rounded-sm animate-bounce" />
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                     {/* Glow effect behind */}
                     <div className="absolute -inset-4 bg-gradient-to-tr from-dental-100 to-dental-50 rounded-3xl blur-2xl opacity-50 -z-10 group-hover:opacity-70 transition-opacity duration-700"></div>

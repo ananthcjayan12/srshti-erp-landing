@@ -41,39 +41,7 @@ const ProcessTimeline: React.FC = () => {
                     ))}
                 </div>
 
-                <div className="mt-20 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div className="flex gap-1 text-amber-400 mb-4">
-                            {'★★★★★'}
-                        </div>
-                        <p className="text-slate-700 font-medium mb-6">
-                            "The visibility into our inventory and production flow has been game-changing for our manufacturing unit."
-                        </p>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">M</div>
-                            <div>
-                                <p className="font-bold text-slate-900 text-sm">National Manufacturing</p>
-                                <p className="text-xs text-slate-500">Operations Head</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                        <div className="flex gap-1 text-amber-400 mb-4">
-                            {'★★★★★'}
-                        </div>
-                        <p className="text-slate-700 font-medium mb-6">
-                            "Clear pricing, no hidden fees, and exactly as promised. The ERPNext implementation was smooth."
-                        </p>
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-500">P</div>
-                            <div>
-                                <p className="font-bold text-slate-900 text-sm">Pioneer Industries</p>
-                                <p className="text-xs text-slate-500">Director</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
     );
