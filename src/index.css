@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    body {
+        @apply antialiased text-slate-900 bg-white selection:bg-dental-200 selection:text-dental-900;
+        font-feature-settings: 'cv11', 'ss01';
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Prevent horizontal overflow on mobile */
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Improve image rendering across devices */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-xl supports-[backdrop-filter]:bg-white/60;
+    }
+
+    .glass-dark {
+        @apply bg-slate-900/80 backdrop-blur-md border border-slate-700/50 shadow-xl;
+    }
+
+    .text-glow {
+        text-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+    }
+
+    /* Noise Texture */
+    .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        opacity: 0.4;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+    }
+
+    /* Scroll-hint: show a visible scrollbar until the user scrolls */
+    .scroll-hint-visible::-webkit-scrollbar {
+        width: 8px;
+    }
+    .scroll-hint-visible::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .scroll-hint-visible::-webkit-scrollbar-thumb {
+        background: rgba(75, 110, 245, 0.35);
+        border-radius: 999px;
+        animation: scroll-hint-fade 3s ease-in-out infinite alternate;
+    }
+    /* Firefox */
+    .scroll-hint-visible {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(75, 110, 245, 0.35) transparent;
+    }
+}
+
+/* Global keyframes (outside @layer so Tailwind JIT can reference them) */
+@keyframes scroll-hint-fade {
+    0%   { opacity: 0.3; }
+    100% { opacity: 0.8; }
+}
+
+@keyframes scenario-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(75, 110, 245, 0); }
+    50%      { box-shadow: 0 0 0 6px rgba(75, 110, 245, 0.25); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+}
